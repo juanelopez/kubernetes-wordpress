@@ -30,6 +30,13 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: mysql-root-password
+        - name: WORDPRESS_DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-configmap
+              key: database_url
+                   
+              
 ---
 apiVersion: v1
 kind: Service
